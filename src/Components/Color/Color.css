@@ -8,4 +8,13 @@
   padding: 2px 6px;
   background: black;
   color: white;
+  
+}
+
+.color-card-role{
+font-weight:600;
+}
+
+.color-card-contrast{
+font-style:italic
 }
