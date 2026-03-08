@@ -1,20 +1,17 @@
 import "./css/color-forms.css";
 import "./css/color-forms-role.css";
+import SelectRole from "../SelectRole.jsx"
 
-export default function ColorForms() {
+export default function ColorForms({roleData}) {
+ console.log(roleData)
+ 
   return (
     <div className="color-forms">
+      
+     <SelectRole roleData={roleData}/>
+     
       <div className="color-forms-role">
-        <label>Role</label>
-        <div>
-          <input
-            type="text"
-            id="role"
-            placeholder="Pick your role here"
-          ></input>
-        </div>
-      </div>
-      <div className="color-forms-role">
+        
         <label>Hex Color</label>
 
         <div>
@@ -23,6 +20,7 @@ export default function ColorForms() {
         </div>
       </div>
       <div className="color-forms-role">
+        
         <label>Contrast Text Color</label>
 
         <div>

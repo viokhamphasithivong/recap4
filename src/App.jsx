@@ -8,8 +8,12 @@ function App() {
     <>
       <h1>Theme Creator</h1>
       
+     
+
+        <ColorForms roleData={initialColors} />
+
+  
       
-      <ColorForms/>
       
       {initialColors.map(color => (
 
