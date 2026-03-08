@@ -1,0 +1,8 @@
+.color-forms-role{
+    display:flex;
+   flex-direction: column;
+    width: 300px;
+    margin: 0px 10px;
+    font-weight:600;
+    gap: 5px;
+}
