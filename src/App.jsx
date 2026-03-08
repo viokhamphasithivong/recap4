@@ -8,14 +8,9 @@ function App() {
     <>
       <h1>Theme Creator</h1>
       
-     
+        <ColorForms roleData={initialColors}/>
 
-        <ColorForms roleData={initialColors} />
-
-  
-      
-      
-      {initialColors.map(color => (
+        {initialColors.map(color => (
 
         <Color color={color} key={color.id}/>
 
