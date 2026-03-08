@@ -1,8 +1,19 @@
 .color-forms-role{
     display:flex;
    flex-direction: column;
-    width: 300px;
-    margin: 0px 10px;
+   
+    margin: 8px 10px;
     font-weight:600;
-    gap: 5px;
+    gap:5px;
+   
+   
+}
+
+.color-forms-role input{
+   margin-right: 8px;
+}
+
+.color-forms div{
+   display: flex;
+   justify-content: start;
 }
