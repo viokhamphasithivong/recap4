@@ -1,19 +1,20 @@
-.color-forms-role{
+.color-forms-role {
     display:flex;
    flex-direction: column;
    
     margin: 8px 10px;
     font-weight:600;
   
-   
-   
+}
+.color-forms-role select, option{
+cursor: pointer;
 }
 
 .color-forms-role input{
    margin-right: 8px;
 }
 
-.color-forms div{
+/* .color-forms div{
    display: flex;
    justify-content: start;
-}
+} */

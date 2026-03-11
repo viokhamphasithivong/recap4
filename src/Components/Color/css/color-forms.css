@@ -1,6 +1,11 @@
 .color-forms{
-  
-  
     font-weight:600;
-   
+  
+}
+
+.color-forms button{
+  
+  
+  cursor: pointer;
+  
 }
