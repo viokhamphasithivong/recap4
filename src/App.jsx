@@ -18,20 +18,29 @@ function handleAddColor(newColor) {
   
 
   function handleDeleteColor(id) {
-    setColors(prev => prev.filter(c => c.id !== id));
+    setColors(prev => prev.filter(colors => colors.id !== id));
   }
 
+  function handleUpdateColor(updatedColor) {
+  setColors((prevColors) =>
+    prevColors.map((color) =>
+      color.id === updatedColor.id ? updatedColor : color
+    )
+  );
+}
 
   return (
     <>
       <h1>Theme Creator</h1>
       
-        <Forms onSubmit={handleAddColor} />
+        <Forms onSubmit={handleAddColor} 
+        defaultValues={{ role: colors.role, hex: colors.hex, contrast: colors.contrastText 
+  }}  />
 
         
         {colors.map(color => (
         <Color color={color} key={color.id}
-        onDelete={() => handleDeleteColor(color.id)}/>
+        onDelete={() => handleDeleteColor(color.id)} onUpdate={handleUpdateColor}/>
       ))}
       
       

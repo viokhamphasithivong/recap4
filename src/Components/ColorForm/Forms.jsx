@@ -2,7 +2,7 @@
 import ColorInput from "../ColorInput";
 
 
-export default function FormApp({onSubmit,
+export default function FormApp({onSubmit, defaultValues,
   placeholderText={role:"Type in your Color Role", hex:"Your Hex Color Code",contrast:"Your Contrast Color"}}
 ) {
 
@@ -11,14 +11,13 @@ export default function FormApp({onSubmit,
      event.preventDefault();
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-     event.target.reset()
     console.log(data)
     onSubmit(data);
   }
 
   return (
     <>
-    <form onSubmit={handleColorData}>
+    <form onSubmit={handleColorData} >
       <label>Role</label>
       <div>
         <input
@@ -26,13 +25,9 @@ export default function FormApp({onSubmit,
           id="role"
           name="role"
           placeholder={placeholderText.role}
+          defaultValue={defaultValues?.role || ""}
         />
-        <button
-          type="button"
-          onClick={() => {placeholderText.role}}
-        >
-          Reset
-        </button>
+       
       </div>
 
       <label>Hex Color</label>
@@ -41,14 +36,12 @@ export default function FormApp({onSubmit,
 
         <ColorInput
           id="hex"
-
-          placeHolder={placeholderText.hex}
-
+  name="hex"
+  defaultValue={defaultValues?.hex || "#000000"}
+  placeHolder="Hex Color"
         />
 
-        <button type="button" onClick={() => {placeholderText.hex}}>
-          Reset
-        </button>
+
       </div>
 
       <label>Contrast Color</label>
@@ -56,15 +49,14 @@ export default function FormApp({onSubmit,
 
         <ColorInput
         id="contrastText"
+        defaultValue={defaultValues?.contrast || ""}
           placeHolder={placeholderText.contrast}
 
         />
-        <button type="button" onClick={() =>{placeholderText.hex}}>
-          Reset
-        </button>
+
       </div>
 
-      <button type="submit">Add new color card</button> <button type="reset">Reset</button>
+      <button type="submit">{defaultValues ? "Add new color card" :"Save Changes"}</button> <button type="reset">Reset</button>
     </form>
 
     
