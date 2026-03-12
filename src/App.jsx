@@ -2,12 +2,14 @@ import { initialColors } from "./lib/colors"; //getting array of colors
 import Color from "./Components/Color/Color"; //getting component for card
 import Forms from "./Components/ColorForm/Forms.jsx";
 import "./App.css"; //getting style 
-import { useState } from "react";
-
+/* import { useState } from "react"; */
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [colors, setColors] = useState(initialColors);
- 
+  const [colors, setColors] = useLocalStorageState({
+    defaultValue: initialColors,
+  });
+
 function handleAddColor(newColor) {
   const colorWithId = {
     id: crypto.randomUUID(),
@@ -18,7 +20,7 @@ function handleAddColor(newColor) {
   
 
   function handleDeleteColor(id) {
-    setColors(prev => prev.filter(colors => colors.id !== id));
+    setColors(prev => prev.filter(color => color.id !== id));
   }
 
   function handleUpdateColor(updatedColor) {
@@ -34,8 +36,7 @@ function handleAddColor(newColor) {
       <h1>Theme Creator</h1>
       
         <Forms onSubmit={handleAddColor} 
-        defaultValues={{ role: colors.role, hex: colors.hex, contrast: colors.contrastText 
-  }}  />
+   />
 
         
         {colors.map(color => (

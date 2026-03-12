@@ -3,7 +3,7 @@ import ColorInput from "../ColorInput";
 
 
 export default function FormApp({onSubmit, defaultValues,
-  placeholderText={role:"Type in your Color Role", hex:"Your Hex Color Code",contrast:"Your Contrast Color"}}
+  placeholderText={role:"Type in your Color Role", hex:"for Example:#ff4a11",contrast:"for Example:#ff8080"}}
 ) {
 
   function handleColorData(event) {
@@ -37,8 +37,8 @@ export default function FormApp({onSubmit, defaultValues,
         <ColorInput
           id="hex"
   name="hex"
-  defaultValue={defaultValues?.hex || "#000000"}
-  placeHolder="Hex Color"
+  defaultValue={defaultValues?.hex || ""}
+  placeHolder={placeholderText.hex}
         />
 
 
@@ -56,7 +56,7 @@ export default function FormApp({onSubmit, defaultValues,
 
       </div>
 
-      <button type="submit">{defaultValues ? "Add new color card" :"Save Changes"}</button> <button type="reset">Reset</button>
+      <button type="submit">{defaultValues ? "Save Changes":"Add new color card"}</button> <button type="reset">Reset</button>
     </form>
 
     
