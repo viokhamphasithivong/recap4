@@ -97,10 +97,10 @@ export default function Color({ color, onDelete, onUpdate }) {
       {loading && <p>Checking contrast...</p>}
       {!loading && contrastScore && (
         <p
-          style={{
+          style={{backgroundColor:"#555555",width:"250px",
             color:
               contrastScore === "Yup"
-                ? "lime"
+                ? "#9eff3e"
                 : contrastScore === "Kinda"
                   ? "orange"
                   : "red",
@@ -109,8 +109,10 @@ export default function Color({ color, onDelete, onUpdate }) {
           Overall Score: <strong>{contrastScore}</strong>
         </p>
       )}
+      <div>
       <button onClick={() => setColorToDelete(true)}>Delete</button>
       <button onClick={() => setIsEditing(true)}>Edit</button>
+      </div>
       {colorToDelete && (
         <div className="color-card-highlight">
           <p className="color-card-highlight">
