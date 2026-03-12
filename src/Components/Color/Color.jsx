@@ -6,11 +6,11 @@ import CopyToClipboard from "../CopyToClipboard";
 export default function Color({ color, onDelete, onUpdate }) {
   const [colorToDelete, setColorToDelete] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
-  const [contrastScore, setContrastScore] = useState(null); // für API Ergebnis
+  const [contrastScore, setContrastScore] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function checkContrast(hex, contrastText) {
-    if (!hex || !contrastText) return;
+    if (!hex || !contrastText);
     setLoading(true);
     try {
       const response = await fetch(
@@ -26,9 +26,9 @@ export default function Color({ color, onDelete, onUpdate }) {
       );
       const data = await response.json();
 
-      setContrastScore(data.overall); // z.B. "Pass" / "Fail" oder numerischer Wert
-    } catch (err) {
-      console.error("Contrast check failed:", err);
+      setContrastScore(data.overall);
+    } catch (error) {
+      console.error("Contrast check failed:", error);
       setContrastScore("Error");
     } finally {
       setLoading(false);

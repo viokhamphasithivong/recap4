@@ -1,4 +1,4 @@
-
+import "../Color/css/color-forms.css";
 import ColorInput from "../ColorInput";
 
 
@@ -17,7 +17,7 @@ export default function FormApp({onSubmit, defaultValues,
 
   return (
     <>
-    <form onSubmit={handleColorData} >
+    <form className="color-forms" onSubmit={handleColorData} >
       <label>Role</label>
       <div>
         <input
@@ -31,7 +31,7 @@ export default function FormApp({onSubmit, defaultValues,
       </div>
 
       <label>Hex Color</label>
-      <div>
+      <div className="color-form">
 
 
         <ColorInput
@@ -56,7 +56,7 @@ export default function FormApp({onSubmit, defaultValues,
 
       </div>
 
-      <button type="submit">{defaultValues ? "Save Changes":"Add new color card"}</button> <button type="reset">Reset</button>
+      <button type="submit">{defaultValues ? "Save Changes":"Add new color card"}</button>
     </form>
 
     

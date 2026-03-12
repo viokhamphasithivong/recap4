@@ -1,11 +1,29 @@
 .color-forms{
+  display:flex;
+  flex-direction: column;
     font-weight:600;
-  
+  margin-left: 10px;
+  margin-bottom: 1rem;
+  gap: 1rem;
+  align-self: center
 }
 
 .color-forms button{
+  max-width: 250px;
   
+  cursor: pointer;
   
+}
+
+.color-forms input{
+  max-width: 250px;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  
+}
+
+.color-pick{
+  border:none;
   cursor: pointer;
   
 }

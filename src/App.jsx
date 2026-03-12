@@ -31,11 +31,15 @@ function handleAddColor(newColor) {
   );
 }
 
+
+
+
   return (
     <>
       <h1>Theme Creator</h1>
       
-        <Forms onSubmit={handleAddColor} 
+        <Forms  onSubmit={handleAddColor} 
+        
    />
 
         

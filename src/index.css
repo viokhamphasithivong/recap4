@@ -15,6 +15,7 @@ https://www.joshwcomeau.com/css/custom-css-reset/
 */
 * {
   margin: 0 ;
+  padding: 0;
 }
 /*
   Typographic tweaks!
@@ -24,6 +25,8 @@ https://www.joshwcomeau.com/css/custom-css-reset/
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  display:flex;
+  flex-flow: column;
 
 }
 /*
@@ -44,12 +47,13 @@ input,
 textarea,
 select {
   font: inherit;
+  align-self: center;
 }
 button {
   font: inherit;
-  margin: 0 10px;
-  margin-bottom: 25px;
-  margin-top: 12px;
+ margin-right: 0.5rem;;
+  
+  
 }
 
 /*
@@ -70,4 +74,8 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+label{
+  font-size: larger;
 }
