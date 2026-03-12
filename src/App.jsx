@@ -6,7 +6,7 @@ import "./App.css"; //getting style
 import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [colors, setColors] = useLocalStorageState({
+  const [colors, setColors] = useLocalStorageState("theme",{
     defaultValue: initialColors,
   });
 
@@ -33,14 +33,11 @@ function handleAddColor(newColor) {
 
 
 
-
   return (
     <>
       <h1>Theme Creator</h1>
       
-        <Forms  onSubmit={handleAddColor} 
-        
-   />
+        <Forms  onSubmit={handleAddColor}/>
 
         
         {colors.map(color => (
